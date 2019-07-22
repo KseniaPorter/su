@@ -1,5 +1,38 @@
-﻿<h2>Welcome to ASP.NET MVC @ViewData["Version"] on @ViewData["Runtime"]!</h2>
-<div id="app">
-    {{ message }}
-    {{ msg }}
-</div>
+﻿@{ 
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>
+        Index
+    </title>
+</head>
+<body>
+    <h3> Customers of ZorroShop</h3>
+
+    <br />
+
+    <table>
+        <thead>
+            <tr>
+                <td>Address</td>
+                <td>Code</td>
+                <td>Discount</td>
+                <td>Buyer's name'</td>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+        foreach (var custModels in ViewBag.customerModels){
+
+
+        }
+
+            }
+        </tbody>
+    </table>
+</body>
+</html>

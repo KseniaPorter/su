@@ -4,19 +4,21 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
+using zorroshop.Models;
 
 namespace zorroshop.Controllers
 {
     public class HomeController : Controller
     {
+        Zorro zorro = new Zorro();
+
+
         public ActionResult Index()
         {
-            var mvcName = typeof(Controller).Assembly.GetName();
-            var isMono = Type.GetType("Mono.Runtime") != null;
 
-            ViewData["Version"] = mvcName.Version.Major + "." + mvcName.Version.Minor +" zalupa";
-            ViewData["Runtime"] = isMono ? "Mono" : ".NET";
+            IEnumerable<CustomerModel> customersM = zorro.customerModels;
 
+            ViewBag.customerModels = customersM;
             return View();
         }
     }
